@@ -26,3 +26,7 @@ print("Sorted Reverse Sorted Array:", sorted_reverse_array)
 already_sorted_array = [1, 2, 3, 4, 5]
 sorted_already_sorted_array = selection_sort(already_sorted_array)
 print("Sorted Already Sorted Array:", sorted_already_sorted_array)
+Sorted Random Array1: [1, 2, 5, 5, 6, 9]
+Sorted Reverse Sorted Array2: [2, 4, 6, 8, 10]
+Sorted Already Sorted Array3: [1, 2, 3, 4, 5]
+
