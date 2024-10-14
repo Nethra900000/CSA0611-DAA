@@ -1,0 +1,36 @@
+
+
+def game_of_life(board):
+    if not board:
+        return
+    
+    rows, cols = len(board), len(board[0])
+    directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+    
+    
+    copy_board = [row[:] for row in board]
+    
+    for r in range(rows):
+        for c in range(cols):
+            live_neighbors = sum((0 <= r + dr < rows and 0 <= c + dc < cols and board[r + dr][c + dc] == 1) 
+                                 for dr, dc in directions)
+            
+            if board[r][c] == 1 and (live_neighbors < 2 or live_neighbors > 3):
+                copy_board[r][c] = 0
+            elif board[r][c] == 0 and live_neighbors == 3:
+                copy_board[r][c] = 1
+    
+    for r in range(rows):
+        for c in range(cols):
+            board[r][c] = copy_board[r][c]
+
+
+board1 = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+game_of_life(board1)
+print(board1)  
+
+board2 = [[1,1],[1,0]]
+game_of_life(board2)
+print(board2)  
+Output1: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+Output2: [[1,1],[0,1]]
