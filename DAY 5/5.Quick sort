@@ -1,0 +1,42 @@
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    less_than_pivot = [x for x in arr[1:] if x <= pivot]
+    greater_than_pivot = [x for x in arr[1:] if x > pivot]
+    print(f"Pivot: {pivot}, Less: {less_than_pivot}, Greater: {greater_than_pivot}")
+    return quick_sort(less_than_pivot) + [pivot] + quick_sort(greater_than_pivot)
+
+# Test case 1
+arr1 = [10, 16, 8, 12, 15, 6, 3, 9, 5]
+sorted_arr1 = quick_sort(arr1)
+print("Sorted array:", sorted_arr1)
+
+# Test case 2
+arr2 = [12, 4, 78, 23, 45, 67, 89, 1]
+sorted_arr2 = quick_sort(arr2)
+print("Sorted array:", sorted_arr2)
+
+# Test case 3
+arr3 = [38, 27, 43, 3, 9, 82, 10]
+sorted_arr3 = quick_sort(arr3)
+print("Sorted array:", sorted_arr3)
+Pivot: 10, Less: [8, 6, 3, 9, 5], Greater: [16, 12, 15]
+Pivot: 8, Less: [6, 3, 5], Greater: [9]
+Pivot: 6, Less: [3, 5], Greater: []
+Pivot: 3, Less: [], Greater: [5]
+Pivot: 16, Less: [12, 15], Greater: []
+Pivot: 12, Less: [], Greater: [15]
+Sorted array1: [3, 5, 6, 8, 9, 10, 12, 15, 16]
+Pivot: 12, Less: [4, 1], Greater: [78, 23, 45, 67, 89]
+Pivot: 4, Less: [1], Greater: []
+Pivot: 78, Less: [23, 45, 67], Greater: [89]
+Pivot: 23, Less: [], Greater: [45, 67]
+Pivot: 45, Less: [], Greater: [67]
+Sorted array2: [1, 4, 12, 23, 45, 67, 78, 89]
+Pivot: 38, Less: [27, 3, 9, 10], Greater: [43, 82]
+Pivot: 27, Less: [3, 9, 10], Greater: []
+Pivot: 3, Less: [], Greater: [9, 10]
+Pivot: 9, Less: [], Greater: [10]
+Pivot: 43, Less: [], Greater: [82]
+Sorted arrary: [3, 9, 10, 27, 38, 43, 82]
