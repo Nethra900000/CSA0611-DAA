@@ -23,3 +23,10 @@ a3 = [22, 34, 35, 36, 43, 67, 12, 13, 15, 17]
 min3, max3 = find_min_max(a3)
 print(f"Input: N={N3}, a[]={a3}")
 print(f"Output: Min = {min3}, Max = {max3}")
+Output1: Min = 2, Max = 12
+Output2: Min = 1, Max = 17
+Output3: Min = 12, Max = 67
+
+
+
+
