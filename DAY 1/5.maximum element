@@ -1,0 +1,10 @@
+def find_maximum(numbers):
+    return max(numbers)
+
+# Test Cases
+print(find_maximum({1, 2, 3, 4, 5}))   
+print(find_maximum({7, 7, 7, 7, 7}))  
+print(find_maximum({-10, 2, 3, -4, 5}))
+Expected Output1: 5
+Expected Output2: 7
+Expected Output3: 5
