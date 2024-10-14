@@ -33,4 +33,4 @@ board2 = [[1,1],[1,0]]
 game_of_life(board2)
 print(board2)  
 Output1: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
-Output2: [[1,1],[0,1]]
+Output2: [[1,1],[1,1]]
