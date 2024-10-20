@@ -1,0 +1,29 @@
+# Minimum Path Distance using Matrix Form
+
+import itertools
+
+def min_path_distance(matrix):
+    n = len(matrix)
+    min_distance = float('inf')
+    
+    for perm in itertools.permutations(range(n)):
+        current_distance = 0
+        for i in range(n - 1):
+            current_distance += matrix[perm[i]][perm[i + 1]]
+        current_distance += matrix[perm[-1]][perm[0]]  # Return to starting point
+        min_distance = min(min_distance, current_distance)
+    
+    return min_distance
+
+# Test Cases
+test_cases = [
+    [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]],
+    [[0, 10, 10, 10], [10, 0, 10, 10], [10, 10, 0, 10], [10, 10, 10, 0]],
+    [[0, 1, 2, 3], [1, 0, 4, 5], [2, 4, 0, 6], [3, 5, 6, 0]]
+]
+
+for i, case in enumerate(test_cases):
+    print(f"Output for Test Case {i + 1}: {min_path_distance(case)}")
+output1=80
+output=40
+output=12
