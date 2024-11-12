@@ -36,3 +36,4 @@ def merge_sort(nums):
 nums = [38, 27, 43, 3, 9, 82, 10]
 sorted_nums = merge_sort(nums)
 print(sorted_nums)
+ouput=[3,9,10,27,38,43,82]
