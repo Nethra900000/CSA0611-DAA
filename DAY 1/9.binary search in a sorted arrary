@@ -20,3 +20,5 @@ key2 = 100
 
 print(binary_search(arr, key1))
 print(binary_search(arr, key2))
+ouput=element 10 is found of position 5
+output=element 100 is not found 
