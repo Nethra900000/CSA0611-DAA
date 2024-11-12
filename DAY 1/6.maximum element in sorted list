@@ -12,5 +12,5 @@ print(process_numbers([]))
 print(process_numbers([5]))
 print(process_numbers([3, 3, 3, 3, 3]))
 Expected Output1: The list is empty.
-Expected Output2: 5
- Expected Output3: 3
+ Output2: 5
+ Output3: 3
