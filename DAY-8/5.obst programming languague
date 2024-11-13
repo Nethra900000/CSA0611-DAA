@@ -1,0 +1,46 @@
+def obst(keys, freq):
+    n = len(keys)
+    cost = [[0] * n for _ in range(n)]
+    root = [[0] * n for _ in range(n)]
+
+    for i in range(n):
+        cost[i][i] = freq[i]
+
+    for length in range(2, n + 1):
+        for i in range(n - length + 1):
+            j = i + length - 1
+            cost[i][j] = float('inf')
+            for r in range(i, j + 1):
+                c = (cost[i][r - 1] if r > i else 0) + (cost[r + 1][j] if r < j else 0) + sum(freq[i:j + 1])
+                if c < cost[i][j]:
+                    cost[i][j] = c
+                    root[i][j] = r
+
+    return cost[0][n - 1], root
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+keys = [10, 12, 16, 21]
+freq = [4, 2, 6, 3]
+cost, root = obst(keys, freq)
+
+print("Cost:", cost)
+print("Root Matrix:")
+print_matrix(root)
+
+
+print("\nTest Case 1:")
+keys1 = [10, 12]
+freq1 = [34, 50]
+cost1, _ = obst(keys1, freq1)
+print("Output:", cost1)
+
+print("\nTest Case 2:")
+keys2 = [10, 12, 20]
+freq2 = [34, 8, 50]
+cost2, _ = obst(keys2, freq2)
+print("Output:", cost2)
+output1=118
+output2=148
